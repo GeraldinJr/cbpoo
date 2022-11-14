@@ -19,4 +19,6 @@ public class Author extends Specialist {
     ) throws InvalidCPFException {
         super(CPF, name, birthDate, academicDegree, institution, password, SpecialistTypes.AUTHOR, specialty);
     }
+
+
 }

@@ -2,12 +2,13 @@ package br.com.cbpoo.repository.impl;
 
 import br.com.cbpoo.model.entities.Participant;
 import br.com.cbpoo.model.enuns.InscriptionStatus;
+import br.com.cbpoo.repository.DataLoad;
 import br.com.cbpoo.repository.IParticipantRepository;
 
 import java.util.ArrayList;
 
 public class ParticipantRepositoryImpl implements IParticipantRepository {
-    private ArrayList<Participant> data = new ArrayList<Participant>();
+    private ArrayList<Participant> data = DataLoad.getInstance().getParticipants();
 
     @Override
     public Participant findByCPF(String CPF) {

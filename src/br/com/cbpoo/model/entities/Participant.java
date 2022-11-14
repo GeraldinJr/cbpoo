@@ -28,4 +28,16 @@ public class Participant extends People {
     public void setStatus(InscriptionStatus status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Participant{\n" +
+                "CPF='" + this.getCPF() + '\n' +
+                ", Name='" + getName() + '\n' +
+                ", BirthDate=" + getBirthDate() + '\n' +
+                ", AcademicDegree=" + getAcademicDegree() + '\n' +
+                ", Institution='" + getInstitution() + '\n' +
+                "status=" + status + '\n' +
+                '}' + '\n';
+    }
 }

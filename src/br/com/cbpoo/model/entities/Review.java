@@ -12,4 +12,30 @@ public class Review {
         this.rating = rating;
         this.comment = comment;
     }
+
+    public Article getArticle() {
+        return article;
+    }
+
+    public Reviewer getReviewer() {
+        return reviewer;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    @Override
+    public String toString() {
+        return "Review{\n" +
+                "article=" + article + "\n" +
+                "reviewer=" + reviewer + "\n"+
+                "rating=" + rating + "\n"+
+                "comment='" + comment + "\n" +
+                '}';
+    }
 }

@@ -1,6 +1,5 @@
-package br.com.cbpoo.controller.impl;
+package br.com.cbpoo.controller;
 
-import br.com.cbpoo.controller.IMenuController;
 import br.com.cbpoo.model.entities.*;
 import br.com.cbpoo.service.*;
 
@@ -9,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static br.com.cbpoo.util.Validator.onlyDigits;
 
-public class MenuControllerImpl implements IMenuController {
+public class MenuController {
     private final Scanner scan;
     private final IParticipantService participantService;
     private final IArticleService articleService;
@@ -19,7 +18,7 @@ public class MenuControllerImpl implements IMenuController {
     private final IAuthorService authorService;
     private final IReviewerService reviewerService;
 
-    public MenuControllerImpl(
+    public MenuController(
             Scanner scan,
             IParticipantService participantService,
             IArticleService articleService,
@@ -50,13 +49,14 @@ public class MenuControllerImpl implements IMenuController {
                 System.out.println("2 - INSCRICAO");
                 System.out.println("3 - ENCERRAR");
 
-                op = scan.nextInt();
+                op = Integer.parseInt(scan.nextLine());
 
                 switch (op) {
                     case 1:
                         login();
                         break;
                     case 2:
+                        //TODO implementar
                         break;
 
                     case 3:
@@ -85,7 +85,7 @@ public class MenuControllerImpl implements IMenuController {
         System.out.println("4 - Autor");
         System.out.println("5 - Revisor");
 
-        switch (scan.nextInt()) {
+        switch (Integer.parseInt(scan.nextLine())) {
             case 1 -> {
                 Participant participant = participantService.loginParticipant(cpf, password);
                 participantMenu(participant);
@@ -153,7 +153,7 @@ public class MenuControllerImpl implements IMenuController {
         String anAnbstract = scan.nextLine();
 
         System.out.println("Informe a quantidade de palavras-chaves");
-        int qnt = scan.nextInt();
+        int qnt = Integer.parseInt(scan.nextLine());
         ArrayList<String> keyWords = new ArrayList<String>();
 
         for (int i = 1; i <= qnt; i++) {
@@ -162,10 +162,10 @@ public class MenuControllerImpl implements IMenuController {
         }
 
         System.out.println("Informe o numero de paginas");
-        int numPags = scan.nextInt();
+        int numPags = Integer.parseInt(scan.nextLine());
 
         System.out.println("Infome a quantidade de autores (alem de voce): ");
-        int qtdAuthors = scan.nextInt();
+        int qtdAuthors = Integer.parseInt(scan.nextLine());
 
         ArrayList<Author> authors = new ArrayList<Author>();
         authors.add(author);
@@ -195,7 +195,7 @@ public class MenuControllerImpl implements IMenuController {
                System.out.println("4 - Listar parcipantes do evento");
                System.out.println("5 - Sair");
 
-               op = scan.nextInt();
+               op = Integer.parseInt(scan.nextLine());
 
                switch (op) {
                    case 1:
@@ -243,7 +243,7 @@ public class MenuControllerImpl implements IMenuController {
                 System.out.println("7 - Listar parcipantes do evento");
                 System.out.println("8 - Sair");
 
-                op = scan.nextInt();
+                op = Integer.parseInt(scan.nextLine());
 
                 switch (op) {
                     case 1:
@@ -310,7 +310,7 @@ public class MenuControllerImpl implements IMenuController {
                System.out.println("8 - Listar parcipantes do evento");
                System.out.println("9 - Sair");
 
-               op = scan.nextInt();
+               op = Integer.parseInt(scan.nextLine());
 
                switch (op) {
                    case 1:
@@ -380,7 +380,7 @@ public class MenuControllerImpl implements IMenuController {
                 System.out.println("7 - Listar parcipantes do evento");
                 System.out.println("8 - Sair");
 
-                op = scan.nextInt();
+                op = Integer.parseInt(scan.nextLine());
 
                 switch (op) {
                     case 1:
@@ -393,7 +393,7 @@ public class MenuControllerImpl implements IMenuController {
                         Article article = articleService.findById(scan.nextLine());
 
                         System.out.println("Inique a sua nota (inteiro de 0 a 10): ");
-                        int rating = scan.nextInt();
+                        int rating = Integer.parseInt(scan.nextLine());
 
                         System.out.println("Insira seu comentario: ");
                         String comment = scan.nextLine();
@@ -451,7 +451,7 @@ public class MenuControllerImpl implements IMenuController {
                 System.out.println("6 - Listar parcipantes do evento");
                 System.out.println("7 - Sair");
 
-                op = scan.nextInt();
+                op = Integer.parseInt(scan.nextLine());
 
                 switch (op) {
                     case 1:

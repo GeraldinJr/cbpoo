@@ -24,4 +24,17 @@ public abstract class Specialist extends People {
     ) throws InvalidCPFException {
         super(CPF, name, birthDate, academicDegree, institution, password, PeopleTypes.SPECIALIST);
     }
+
+    @Override
+    public String toString() {
+        return "Specialist{\n" +
+                "CPF='" + this.getCPF() + '\n' +
+                "Name='" + getName() + '\n' +
+                "BirthDate=" + getBirthDate() + '\n' +
+                "AcademicDegree=" + getAcademicDegree() + '\n'+
+                "Institution='" + getInstitution() + '\n' +
+                "SpecialistType=" + SpecialistType + '\n' +
+                "Specialty=" + Specialty + '\n' +
+                '}';
+    }
 }

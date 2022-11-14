@@ -20,4 +20,17 @@ public abstract class Organizer extends People {
     ) throws InvalidCPFException {
         super(CPF, name, birthDate, academicDegree, institution, password, PeopleTypes.ORGANIZER);
     }
+
+
+    @Override
+    public String toString() {
+        return "Organizer{\n" +
+                "CPF='" + this.getCPF() + '\n' +
+                "Name='" + getName() + '\n' +
+                "BirthDate=" + getBirthDate() + '\n' +
+                "AcademicDegree=" + getAcademicDegree() + '\n'+
+                "Institution='" + getInstitution() + '\n' +
+                "OrganizerType=" + OrganizerType + '\n' +
+                '}';
+    }
 }

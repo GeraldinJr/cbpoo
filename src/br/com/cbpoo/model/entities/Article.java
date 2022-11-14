@@ -70,6 +70,19 @@ public class Article {
         this.articleStatus = articleStatus;
     }
 
+    @Override
+    public String toString() {
+        return "Article{\n" +
+                "id=" + id + '\n' +
+                "title=" + title + '\n' +
+                "abstractArticle='" + abstractArticle + '\n' +
+                "Keywords=" + Keywords + '\n'+
+                "NumberOfPages=" + NumberOfPages + '\n' +
+                "SubmissionDate=" + SubmissionDate + '\n' +
+                "Authors=" + Authors + '\n' +
+                "articleStatus=" + articleStatus + '\n' +
+                '}'+ '\n';
+    }
 }
 
 

@@ -2,12 +2,13 @@ package br.com.cbpoo.repository.impl;
 
 import br.com.cbpoo.model.entities.Article;
 import br.com.cbpoo.model.enuns.ArticleStatus;
+import br.com.cbpoo.repository.DataLoad;
 import br.com.cbpoo.repository.IArticleRepository;
 
 import java.util.ArrayList;
 
 public class ArticleRepositoryImpl implements IArticleRepository {
-    private ArrayList<Article> data = new ArrayList<Article>();
+    private ArrayList<Article> data = DataLoad.getInstance().getArticles();
 
     @Override
     public ArrayList<Article> findAll() {
